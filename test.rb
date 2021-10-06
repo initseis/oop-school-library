@@ -34,3 +34,7 @@ book1.rentals.each do |rental|
 end
 puts rental1.person.name
 puts rental2.book.title
+book2 = Book.new('La ciudad y los perros', 'Mario Vargas Llosa')
+book2.add_rental('01-05-2021', person1)
+puts book2.rentals[0].date
+puts book2.rentals[0].person.name
