@@ -23,12 +23,14 @@ puts student1.classroom.label
 puts student3.classroom.label
 puts '##########################'
 
-person1 = Person.new(25, false, "Sevinchek")
-book1 = Book.new("100 años de soledad", "Gabriel García Marquez")
-rental1 = Rental.new("04-26-2021", person1, book1)
-rental2 = Rental.new("06-01-2020", person1, book1)
+person1 = Person.new(25, false, 'Sevinchek')
+book1 = Book.new('100 años de soledad', 'Gabriel García Marquez')
+rental1 = Rental.new('04-26-2021', person1, book1)
+rental2 = Rental.new('06-01-2020', person1, book1)
 puts person1.rentals[0].date
-puts book1.rentals[0].date
+puts book1.rentals[1].date
 book1.rentals.each do |rental|
   puts rental.date
 end
+puts rental1.person.name
+puts rental2.book.title
