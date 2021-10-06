@@ -1,5 +1,9 @@
 require_relative './Classroom'
 require_relative './Student'
+require_relative './person'
+require_relative './book'
+require_relative './rental'
+
 class1 = Classroom.new('math')
 class2 = Classroom.new('science')
 student1 = Student.new(25, false, 'kevin')
@@ -19,10 +23,6 @@ puts student1.classroom.label
 puts student3.classroom.label
 puts '##########################'
 
-
-require_relative './person'
-require_relative './book'
-require_relative './rental'
 person1 = Person.new(25, false, "Sevinchek")
 book1 = Book.new("100 años de soledad", "Gabriel García Marquez")
 rental1 = Rental.new("04-26-2021", person1, book1)

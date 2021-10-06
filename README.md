@@ -5,6 +5,7 @@ Imagine that you are the librarian of OOP University, and you need a tool to rec
 - Add new students or teachers.
 - Add new books.
 - Save records of who borrowed a given book and when.
+- Set up associations between classes and objects.
 
 And all of this will be built in a beautiful and well-organized way!
 
