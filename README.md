@@ -6,6 +6,7 @@ Imagine that you are the librarian of OOP University, and you need a tool to rec
 - Add new books.
 - Save records of who borrowed a given book and when.
 - Set up associations between classes and objects.
+- Build interactive console apps.
 
 And all of this will be built in a beautiful and well-organized way!
 
@@ -25,10 +26,10 @@ And all of this will be built in a beautiful and well-organized way!
 
 ### Usage
 
-1. Create an instance in a new .rb file requiring the given classes (Person, Student, and Teacher), then execute your file:
+1. Run the main.rb file and interact with the console:
 
    ```sh
-   ruby your_file_name.rb
+   ruby main.rb
    ```
 
 ## Acknowledgements
