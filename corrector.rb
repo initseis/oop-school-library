@@ -1,6 +1,6 @@
 class Corrector
   def correct_name(name)
-    capitalized_name = name.capitalize
+    capitalized_name = name
     if capitalized_name.length > 10
       capitalized_name[0..9]
     else
