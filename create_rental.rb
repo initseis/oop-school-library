@@ -8,11 +8,7 @@ class CreateRental
     puts ''
     puts 'Select a person from the following list by number (not id)'
     people.each.with_index do |p, index|
-      if p['specialization']
-        puts "#{index}) [Teacher] Name: #{p['name']}, ID: #{p['id']}, Age: #{p['age']}"
-      else
-        puts "#{index}) [Student] Name: #{p['name']}, ID: #{p['id']}, Age: #{p['age']}"
-      end
+      puts "#{index}) [#{p['json_class']}] Name: #{p['name']}, ID: #{p['id']}, Age: #{p['age']}"
     end
     person_index = gets.chomp
     print 'Date: '

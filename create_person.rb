@@ -20,14 +20,14 @@ class CreatePerson
     case type
     when '1'
       people_temp = Student.new(age.to_i, permission, name)
-      person = { 'age' => people_temp.age, 'permission' => people_temp.can_use_services?, 'name' => people_temp.name,
-                 'id' => people_temp.id }
+      person = { 'json_class' => 'Student', 'age' => people_temp.age, 'permission' => people_temp.can_use_services?,
+                 'name' => people_temp.name, 'id' => people_temp.id }
       people.push(person)
       puts 'Person created successfully'
       puts ''
     when '2'
       teacher_temp = Teacher.new(specialization, age.to_i, name)
-      teacher = { 'age' => teacher_temp.age, 'specialization' => teacher_temp.specialization,
+      teacher = { 'json_class' => 'Teacher', 'age' => teacher_temp.age, 'specialization' => teacher_temp.specialization,
                   'permission' => teacher_temp.can_use_services?, 'name' => teacher_temp.name, 'id' => teacher_temp.id }
       people.push(teacher)
       puts 'Person created successfully'

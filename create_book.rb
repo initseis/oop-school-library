@@ -7,7 +7,7 @@ class CreateBook
     print 'Author: '
     author = gets.chomp
     book_temp = Book.new(title, author)
-    book = { 'title' => book_temp.title, 'author' => book_temp.author }
+    book = { 'json_class' => 'Book', 'title' => book_temp.title, 'author' => book_temp.author }
     books.push(book)
     puts 'Book created successfully'
     puts ''
