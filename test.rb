@@ -7,7 +7,7 @@ require_relative './rental'
 class1 = Classroom.new('math')
 class2 = Classroom.new('science')
 student1 = Student.new(25, false, 'kevin')
-student2 = Student.new(22, false, 'lucia')
+student2 = Student.new(22, false, 'lucero')
 student3 = Student.new(17, false, 'mirta')
 puts class1.students.length
 student1.classroom = class1
