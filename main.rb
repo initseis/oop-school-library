@@ -28,6 +28,7 @@ def menu(option, books, people)
     rental.list_rentals_per_id(people)
   when '7'
     File.write('./books.json', JSON.dump(books))
+    File.write('./people.json', JSON.dump(people))
     puts 'Thank you for using this app!'
     puts ''
   else
@@ -39,8 +40,10 @@ end
 def main
   books_file = File.read('./books.json')
   books = JSON.parse(books_file)
+  people_file = File.read('./people.json')
+  people = JSON.parse(people_file)
   # books = []
-  people = []
+  # people = []
   option = ''
 
   while option != '7'
