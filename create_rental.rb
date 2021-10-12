@@ -17,9 +17,9 @@ class CreateRental
     person_index = gets.chomp
     print 'Date: '
     date = gets.chomp
-    Rental.new(date, people[person_index.to_i], books[book_index.to_i])
-    rental = { 'date' => date, 'book' => books[book_index.to_i]['title'], 'author' => books[book_index.to_i]['author'],
-               'id_person' => people[person_index.to_i]['id'] }
+    rental_temp = Rental.new(date, people[person_index.to_i], books[book_index.to_i])
+    rental = { 'date' => date, 'book' => rental_temp.book['title'], 'author' => rental_temp.book['author'],
+               'id_person' => rental_temp.person['id'] }
     rentals.push(rental)
     puts ''
     puts "Date: #{date}"
