@@ -4,6 +4,7 @@ require_relative './list_books'
 require_relative './list_people'
 require_relative './create_rental'
 require_relative './list_rental'
+require 'json'
 
 def menu(option, books, people)
   case option
@@ -26,6 +27,7 @@ def menu(option, books, people)
     rental = ListRental.new
     rental.list_rentals_per_id(people)
   when '7'
+    File.write('./books.json', JSON.dump(books))
     puts 'Thank you for using this app!'
     puts ''
   else
@@ -35,7 +37,9 @@ def menu(option, books, people)
 end
 
 def main
-  books = []
+  books_file = File.read('./books.json')
+  books = JSON.parse(books_file)
+  # books = []
   people = []
   option = ''
 
