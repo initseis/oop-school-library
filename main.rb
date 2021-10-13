@@ -4,8 +4,9 @@ require_relative './list_books'
 require_relative './list_people'
 require_relative './create_rental'
 require_relative './list_rental'
+require 'json'
 
-def menu(option, books, people)
+def menu(option, books, people, rentals)
   case option
   when '1'
     list = ListBooks.new
@@ -21,11 +22,14 @@ def menu(option, books, people)
     book.add(books)
   when '5'
     rental = CreateRental.new
-    rental.create_rental(books, people)
+    rental.create_rental(books, people, rentals)
   when '6'
     rental = ListRental.new
-    rental.list_rentals_per_id(people)
+    rental.list_rentals_per_id(rentals)
   when '7'
+    File.write('./books.json', JSON.dump(books))
+    File.write('./people.json', JSON.dump(people))
+    File.write('./rentals.json', JSON.dump(rentals))
     puts 'Thank you for using this app!'
     puts ''
   else
@@ -35,8 +39,32 @@ def menu(option, books, people)
 end
 
 def main
-  books = []
-  people = []
+  begin
+    books_file = File.read('./books.json')
+    books = JSON.parse(books_file)
+  rescue StandardError
+    File.write('./books.json', JSON.dump([]))
+    books_file = File.read('./books.json')
+    books = JSON.parse(books_file)
+  end
+
+  begin
+    people_file = File.read('./people.json')
+    people = JSON.parse(people_file)
+  rescue StandardError
+    File.write('./people.json', JSON.dump([]))
+    people_file = File.read('./people.json')
+    people = JSON.parse(people_file)
+  end
+
+  begin
+    rentals_file = File.read('./rentals.json')
+    rentals = JSON.parse(rentals_file)
+  rescue StandardError
+    File.write('./rentals.json', JSON.dump([]))
+    rentals_file = File.read('./rentals.json')
+    rentals = JSON.parse(rentals_file)
+  end
   option = ''
 
   while option != '7'
@@ -48,7 +76,7 @@ def main
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
     option = gets.chomp
-    menu(option, books, people)
+    menu(option, books, people, rentals)
   end
 end
 

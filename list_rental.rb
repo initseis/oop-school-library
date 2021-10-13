@@ -1,14 +1,12 @@
 class ListRental
-  def list_rentals_per_id(people)
+  def list_rentals_per_id(rentals)
     print 'ID of person: '
     id = gets.chomp
     puts 'Rentals:'
-    people.each do |p|
-      next unless p.id == id.to_i
+    rentals.each do |r|
+      next unless r['id_person'] == id.to_i
 
-      p.rentals.each do |r|
-        puts "Date: #{r.date}, Book \"#{r.book.title}\" by #{r.book.author}"
-      end
+      puts "Date: #{r['date']}, Book \"#{r['book']}\" by #{r['author']}"
     end
     puts ''
   end

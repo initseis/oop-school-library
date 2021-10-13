@@ -38,6 +38,7 @@ And all of this will be built in a beautiful and well-organized way!
 - Implement encapsulation and inheritance with Ruby.
 - Run a program using the command line.
 - Implement composition (as an example of the design pattern).
+- Store data in files.
 
 ## Authors
 
