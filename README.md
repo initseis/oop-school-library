@@ -32,6 +32,14 @@ And all of this will be built in a beautiful and well-organized way!
    ruby main.rb
    ```
 
+### Test
+
+1. For testing the classes run:
+
+   ```sh
+   rspec spec/class_name.rb
+   ```
+
 ## Acknowledgements
 
 - Implement classes and objects in Ruby.
@@ -39,6 +47,8 @@ And all of this will be built in a beautiful and well-organized way!
 - Run a program using the command line.
 - Implement composition (as an example of the design pattern).
 - Store data in files.
+- Write unit tests using Rspec.
+- Understand an existing codebase in a way that allows for adding tests.
 
 ## Authors
 
